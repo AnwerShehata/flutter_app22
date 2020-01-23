@@ -12,6 +12,47 @@ class _BirdState extends State<Page14> {
   String name1 ="بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ";
   String name2 ="الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ (2) الرَّحْمَنِ الرَّحِيمِ (3) مَالِكِ يَوْمِ الدِّينِ (4) إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ (5) اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ (6) صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ (7)";
 
+
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                GestureDetector(onTap: (){Navigator.pop(context);},
+                    child: CircleAvatar(child: Icon(Icons.close ,color: anWhite, size: 20,),
+                      backgroundColor: an1, maxRadius: 15,)),
+                Text("جميع الطلاب" ,textAlign: TextAlign.center,),
+              ]),
+
+          content: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width,
+            child: ListView(
+              children: <Widget>[
+                buildContainer7(),
+                buildContainer7(),
+                buildContainer7(),
+                buildContainer7(),
+                buildContainer7(),
+                buildContainer7(),
+                buildContainer7(),
+              ],
+            ),
+          ),
+          elevation: 10,
+          actions: <Widget>[
+          ],
+        );
+      },
+    );
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -202,7 +243,7 @@ class _BirdState extends State<Page14> {
                 horizontal: 10 ,vertical: 10  ,colorButton: an1  , radiusButton: 10 , fontSize: 20 , heightButton: 60),
 
 
-            my_Button(textButton: "عرض تسجيلات الطلاب  " , onBtnclicked: (){} ,
+            my_Button(textButton: "عرض تسجيلات الطلاب  " , onBtnclicked: (){_showDialog();} ,
                 horizontal: 10 ,vertical: 10  ,colorButton: an1  , radiusButton: 10 , fontSize: 20 , heightButton: 60),
 
 

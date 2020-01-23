@@ -7,6 +7,13 @@ class Page4 extends StatefulWidget {
 }
 
 class _BirdState extends State<Page4> {
+
+
+  void onTap(){
+    print("إنشاء حساب");
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -55,7 +62,7 @@ class _BirdState extends State<Page4> {
                 Radius: 30 , horizontal: 30,vertical: 10 , hintText: "كلمة المرور " ,
                 TextInput: TextInputType.number , textAlign: TextAlign.end),
 
-            my_Button(horizontal: 30 ,vertical: 30, textButton: "إنشاء حساب" , onBtnclicked: (){} , colorButton: an1 , radiusButton: 30 ,heightButton: 60 , fontSize: 20)
+            my_Button(horizontal: 30 ,vertical: 30, textButton: "إنشاء حساب" , onBtnclicked: (){onTap();} , colorButton: an1 , radiusButton: 30 ,heightButton: 60 , fontSize: 20)
           ],
         ),
 

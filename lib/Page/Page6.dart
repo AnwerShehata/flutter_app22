@@ -8,6 +8,11 @@ class Page6 extends StatefulWidget {
 }
 
 class _BirdState extends State<Page6> {
+
+  void onTap(){
+    print("onTap");
+  }
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -29,7 +34,10 @@ class _BirdState extends State<Page6> {
           actions: <Widget>[
             Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: CircleAvatar(child: Icon(Icons.arrow_forward_ios,color: anGray, ), backgroundColor: anWhite),
+              child: GestureDetector(onTap: (){onTap();},
+              child: CircleAvatar(
+              child: Icon(Icons.arrow_forward_ios,color: anGray, ),
+              backgroundColor: anWhite)),
             ),
           ],
         ),

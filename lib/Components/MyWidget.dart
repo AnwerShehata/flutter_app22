@@ -184,8 +184,8 @@ Widget buildContainer4() {
     margin: EdgeInsets.symmetric(horizontal: 3 ,vertical: 2),
     padding: EdgeInsets.symmetric(horizontal: 2),
     decoration: BoxDecoration(
-      color: Colors.grey[100],
-      borderRadius: BorderRadius.circular(10),
+      color: Colors.grey[50],
+      borderRadius: BorderRadius.circular(5),
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -199,10 +199,10 @@ Widget buildContainer4() {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
                 SizedBox(height: 20),
-                new Text("انور شحاتة عبد الزاهر " , style: TextStyle(fontSize: 16),),
-                new Text("رقم الطالب " , style: TextStyle(fontSize: 12),),
+                new Text("انور شحاتة عبد الزاهر " , style: TextStyle(fontSize: 15),),
+                new Text("رقم الطالب " , style: TextStyle(fontSize: 11),),
               ],),
-            SizedBox(width: 20),
+            SizedBox(width: 5),
             CircleAvatar(minRadius: 25, backgroundColor: an1,),
           ],
         ),
@@ -217,7 +217,7 @@ Padding PaddingText({
 }) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
-    child: new Text(name , style: TextStyle(fontSize: 20),),
+    child: new Text(name , style: TextStyle(fontSize: 20), textAlign: TextAlign.end,),
   );
 }
 
@@ -296,6 +296,46 @@ Widget buildContainer6({
               ),
             ),
           )
+        ),
+      ],
+    ),
+  );
+}
+
+
+Widget buildContainer7() {
+  return new Container(
+    margin: EdgeInsets.symmetric(horizontal: 3 ,vertical: 2),
+    padding: EdgeInsets.symmetric(horizontal: 2),
+    decoration: BoxDecoration(
+      color: Colors.grey[50],
+      borderRadius: BorderRadius.circular(5),
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+
+        new Column(
+          children: <Widget>[
+            my_Button(heightButton: 15 ,textButton: "تم" ,fontSize: 10 ,radiusButton: 10 , colorButton: an1 ,onBtnclicked: (){}),
+            my_Button(heightButton: 15 ,textButton: "عادة تسميع" ,fontSize: 10 ,radiusButton: 10 , colorButton: anYellow ,onBtnclicked: (){}),
+          ],
+        ),
+
+        new Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            new Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                SizedBox(height: 20),
+                new Text("انور شحاتة عبد الزاهر " , style: TextStyle(fontSize: 13),),
+                new Text("رقم الطالب " , style: TextStyle(fontSize: 10),),
+              ],),
+            SizedBox(width: 5),
+            CircleAvatar(minRadius: 20, backgroundColor: an1,),
+          ],
         ),
       ],
     ),

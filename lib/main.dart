@@ -42,7 +42,7 @@ class _BirdState extends State<MyApp> {
 //      home: new Page9(),
 //      home: new Page10(),
 //      home: new Page11(),
-      home: new Page12(),
+//      home: new Page12(),
 //       home: new Page13(),
 //       home: new Page14(),
 //       home: new Page15(),

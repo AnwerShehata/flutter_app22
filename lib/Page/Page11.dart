@@ -8,6 +8,50 @@ class Page11 extends StatefulWidget {
 }
 
 class _BirdState extends State<Page11> {
+
+
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+            GestureDetector(onTap: (){Navigator.pop(context);},
+            child: CircleAvatar(child: Icon(Icons.close ,color: anWhite, size: 20,),
+            backgroundColor: an1, maxRadius: 15,)),
+            Text("جميع الطلاب" ,textAlign: TextAlign.center,),
+          ]),
+
+          content: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.width,
+            child: ListView(
+              children: <Widget>[
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+                buildContainer4(),
+              ],
+            ),
+          ),
+          elevation: 10,
+          actions: <Widget>[
+          ],
+        );
+      },
+    );
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -34,7 +78,6 @@ class _BirdState extends State<Page11> {
 
         body: ListView(
           children: <Widget>[
-
             new Container(
               decoration: BoxDecoration(
                   boxShadow: [new BoxShadow(color: Colors.grey.shade200, blurRadius: 4.0,),] ,
@@ -50,7 +93,6 @@ class _BirdState extends State<Page11> {
                 ],
               ),
             ),
-
 
             new Container(
               decoration: BoxDecoration(
@@ -80,7 +122,6 @@ class _BirdState extends State<Page11> {
               ),
             ),
 
-
             new Container(
               decoration: BoxDecoration(
                 boxShadow: [new BoxShadow(color: Colors.grey.shade200, blurRadius: 4.0,),] ,
@@ -105,21 +146,17 @@ class _BirdState extends State<Page11> {
                       buildContainer4(),
                       buildContainer4(),
                       buildContainer4(),
-
-                      my_Button(textButton: "عرض الكل " , onBtnclicked: (){} , horizontal: 80, vertical: 10 ,radiusButton: 50,
-                      heightButton: 45 , fontSize: 20, colorButton: an1)
+                      Container(
+                        width: 200,
+                        child: my_Button(textButton: "عرض الكل " , onBtnclicked: (){_showDialog();} , horizontal: 20, vertical: 10 ,radiusButton: 50,
+                        heightButton: 50 , fontSize: 18, colorButton: an1),
+                      )
                     ],
                   )
 
                 ],
               ),
             ),
-
-
-
-
-
-
           ],
         ),
 

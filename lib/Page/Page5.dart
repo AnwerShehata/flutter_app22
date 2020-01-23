@@ -10,7 +10,33 @@ class Page5 extends StatefulWidget {
 
 class _BirdState extends State<Page5> {
 
+  TextEditingController SearchController = new TextEditingController();
+
   String value1 = "75%";
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: Border(bottom: BorderSide(width: 1)),
+          content: Container(
+            height: 125,
+            child: Column(
+              children: <Widget>[
+                my_TextField_Icon(Radius: 1 ,hintText: "اكتب كلمة البحث" ,controllers: SearchController),
+                my_Button(vertical: 10, textButton: "بحث", fontSize: 20 , onBtnclicked: (){} , colorButton: an1)
+              ],
+            ),
+          ),
+          elevation: 10,
+          actions: <Widget>[
+          ],
+        );
+      },
+    );
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +60,7 @@ class _BirdState extends State<Page5> {
             // شعار التطبيق
             Image.asset("assets/imag/logo1.png" ,scale: 7),
           ],),
-          leading:   IconButton(icon:Icon(Icons.search ,size: 30,), onPressed: (){}) ,
+          leading:   IconButton(icon:Icon(Icons.search ,size: 30,), onPressed: (){_showDialog();}) ,
           elevation: 0,
           backgroundColor: an1,
           actions: <Widget>[

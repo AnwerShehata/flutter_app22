@@ -20,6 +20,11 @@ class _BirdState extends State<Page2> {
     print("onTap");
   }
 
+  //تسجيل دخول ====
+  void onTap3(){
+    print("onTap");
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +64,7 @@ class _BirdState extends State<Page2> {
             SizedBox(height: 20),
             my_Button(
                 horizontal: 30 , vertical: 10, radiusButton: 20 , heightButton: 60 ,
-                textButton: "دخول" , fontSize: 30 , onBtnclicked: (){} , colorButton: an1
+                textButton: "دخول" , fontSize: 30 , onBtnclicked: (){onTap3();} , colorButton: an1
             ),
 
 
